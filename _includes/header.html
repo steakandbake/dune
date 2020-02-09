@@ -1,0 +1,31 @@
+<!-- Page Wrapper -->
+<div id="page-wrapper">
+
+	<!-- Header -->
+	<header id="header" {% if page.layout == 'default' %} class="alt" {% endif %}>
+		<h1><a href="{{ "" | absolute_url }}/">steak.and.dune - easy dune (đ) staking</a></h1>
+		<nav id="nav">
+			<ul>
+				<li class="special">
+					<a href="#menu" class="menuToggle"><span>Menu</span></a>
+					<div id="menu">
+						<ul>
+							<li><a href="#">Home</a></li>
+							<li><a href="https://dunscan.io/dn1J2rQsZkeim6jhGcTSAh15z8Xq9R8R6FP9" target="_blank">Visit us on dunScan</a></li>
+							<li><a href="http://steakandbake.now.im" target="_blank">Tezos Baking Sister Site</a></li>
+							<li><a href="" target="">Ethereum Sister Site, Coming Soon</a></li>
+							<li><a href="" target="">Cardano Sister Site, Coming Soon</a></li>
+							<!-- Omit
+							{% for page in site.pages %} {% if page.layout == "default" %}
+							<li><a href="{{ page.url | absolute_url }}">{{ page.title }}</a></li>
+							{% endif %} {% endfor %} {% for page in site.pages %} {% if page.layout == "page" %}
+							<li><a href="{{ page.url | absolute_url }}">{{ page.title }}</a></li>
+							{% endif %} {% endfor %}
+							 -->
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</nav>
+		
+	</header>
