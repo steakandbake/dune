@@ -1,8 +1,8 @@
 # Site settings
 title: steak.and.dune - easy dune staking
 email: steakandbake@protonmail.com
-baseurl: "/dune" # the subpath of your site, e.g. /blog
-url: "https://steakanddune.github.io" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog
+url: # the base hostname & protocol for your site
 author:
 street_address: dune blockchain
 city: duneville
