@@ -12,6 +12,41 @@ function clipboardAddress(address) {
   $temp.remove();
 }*/
 
+const getJSON = async url => {
+  try {
+    const response = await fetch(url);
+    if(!response.ok) // check if response worked (no 404 errors etc...)
+      throw new Error(response.statusText);
+
+    const data = await response.json(); // get JSON from the response
+    return data; // returns a promise, which resolves to this data value
+  } catch(error) {
+    return error;
+  }
+}
+
+function numberWithCommas(n) {
+    var parts=n.toString().split(".");
+    return parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",") + (parts[1] ? "." + parts[1] : "");
+}
+
+console.log("Fetching data...");
+getJSON("https://mainnet-node.dunscan.io/chains/main/blocks/head/context/delegates/dn1J2rQsZkeim6jhGcTSAh15z8Xq9R8R6FP9").then(data => {
+  //console.log(data);
+  var freeSpace = ((data.balance * 10.396 - data.staking_balance) / 1000000).toFixed(0);
+  //console.log(freeSpace);
+  if (freeSpace > 1000) {
+  	freeSpace = numberWithCommas(freeSpace)
+	$("#space_msg").text("OPEN: We have space for " + freeSpace + " dun.");
+	$("#currentStatus").text("ACCEPTING NEW DELEGATIONS. Space for "+ freeSpace + " dun.");
+  } else {
+	$("#space_msg").text("CLOSED: We're out of space. Thanks for looking!");
+	$("#currentStatus").text("CLOSED FOR DELEGATIONS.");
+  }
+}).catch(error => {
+  console.error(error);
+});
+
 $(document).ready(function(){
     var clipboard = new ClipboardJS('#btn_copy');
     
