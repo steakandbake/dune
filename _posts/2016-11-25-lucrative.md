@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Lucrative - Earn and Compound your Dunes
-description: Compounding passive crypto income is now a reality with steakanddune's low fees of 5%.
+description: Compounding passive crypto income is now a reality with steakanddune's low fees of 10%.
 image: pic02.jpg
 ---
 

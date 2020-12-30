@@ -40,7 +40,7 @@ getJSON("https://mainnet-node.dunscan.io/chains/main/blocks/head/context/delegat
 	$("#space_msg").text("OPEN: We have space for " + freeSpace + " dun.");
 	$("#currentStatus").text("ACCEPTING NEW DELEGATIONS. Space for "+ freeSpace + " dun.");
   } else {
-	$("#space_msg").text("CLOSED: We're out of space. Thanks for looking!");
+	$("#space_msg").text("CLOSED: Do NOT send NEW delegations to us now. You won't get rewards. Thanks for looking!");
 	$("#currentStatus").text("CLOSED FOR DELEGATIONS.");
   }
 }).catch(error => {
